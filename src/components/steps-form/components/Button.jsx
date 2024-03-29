@@ -4,7 +4,7 @@ export default function Button({
   children
 }) {
   return(
-    <button className={`block w-28 ${bg} rounded font-semibold text-lg ${color} capitalize leading-10`}>
+    <button className={`block w-32 ${bg} rounded-lg font-semibold text-lg ${color} capitalize leading-[3rem]`}>
       {children}
     </button>
   )
