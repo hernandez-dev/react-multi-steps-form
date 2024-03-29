@@ -99,8 +99,8 @@ export const state = {
     },
     {
       id: 4,
-      heading: "summary",
-      subHeading: "check your order",
+      heading: "finishing up",
+      subHeading: "summary",
       description: "Add-ons help to enhance your gaming experience",
     }
   ],
