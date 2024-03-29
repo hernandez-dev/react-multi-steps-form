@@ -3,7 +3,7 @@ import PersonalInformation from "./components/steps-form/components/PersonalInfo
 import PlanSelector from "./components/steps-form/components/PlanSelector.jsx"
 import AddonsSelector from "./components/steps-form/components/AddonsSelector.jsx"
 
-const state = {
+export const state = {
   steps: [
     {
       id: 1,
@@ -107,4 +107,4 @@ const state = {
   currentStep: 0
 }
 
-export default state
+// export default state
