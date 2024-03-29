@@ -1,4 +1,12 @@
-export default function Sidebar({ steps }) {
+import { useContext } from "react"
+
+// context
+import StateContext from "../../context/StateContext.js"
+
+export default function Sidebar() {
+  // state
+  const { steps } = useContext(StateContext)
+
   return(
     <aside className="relative">
       <img src="/images/bg-sidebar-desktop.svg" alt="sidebar background" className="block w-full" />
