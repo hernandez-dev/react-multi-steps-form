@@ -33,7 +33,7 @@ export default function StepsForm() {
       <form className="flex flex-col flex-1 max-w-2xl h-full mx-auto pb-5 pt-10">
         <section className="flex-1 space-y-10">
           <FormHeader step={step} />
-          <step.Component step={step} />
+          <step.Component step={step} dispatch={appDispatch} />
         </section>
         <footer className="flex justify-between">
           <Button
