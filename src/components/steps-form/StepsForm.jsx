@@ -2,6 +2,7 @@ import { useContext } from "react"
 
 // context
 import StateContext from "../../context/StateContext.js"
+import DispatchContext from "../../context/DispatchContext.js"
 
 // components
 import FormHeader from "./components/FormHeader.jsx"
@@ -14,13 +15,16 @@ export default function StepsForm() {
   // current step
   const step = steps[currentStep]
 
+  // app dispatch
+  const appDispatch = useContext(DispatchContext)
+
   // handleClick
   function handleClick(e) {
     const action = e.target.getAttribute("data-action").toLowerCase()
     if (action === "next") {
-      console.log("next step")
+      appDispatch({ type: "set-current-step", value: currentStep + 1 })
     } else {
-      console.log("prev step")
+      appDispatch({ type: "set-current-step", value: currentStep - 1 })
     }
   }
 
@@ -43,7 +47,7 @@ export default function StepsForm() {
         </Button>
         <Button
           type="button"
-          action="prev"
+          action="next"
           bg="bg-marine-blue"
           color="text-white"
           disabled={currentStep === (steps.length - 1)}
