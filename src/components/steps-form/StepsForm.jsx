@@ -4,6 +4,7 @@ import { useContext } from "react"
 import StateContext from "../../context/StateContext.js"
 
 // components
+import FormHeader from "./components/FormHeader.jsx"
 import Button from "./components/Button.jsx"
 
 export default function StepsForm() {
@@ -16,7 +17,8 @@ export default function StepsForm() {
   return(
     <form className="flex flex-col flex-1 space-y-1">
       <section className="flex-1">
-        current step
+        <FormHeader step={step} />
+        <step.Component step={step} />
       </section>
       <footer className="flex justify-between">
         <Button
