@@ -29,33 +29,35 @@ export default function StepsForm() {
   }
 
   return(
-    <form className="flex flex-col flex-1 space-y-1">
-      <section className="flex-1">
-        <FormHeader step={step} />
-        <step.Component step={step} />
-      </section>
-      <footer className="flex justify-between">
-        <Button
-          type="button"
-          action="prev"
-          bg="bg-transparent"
-          color="text-cool-gray"
-          disabled={currentStep === 0}
-          onClick={handleClick}
-        >
-          go back
-        </Button>
-        <Button
-          type="button"
-          action="next"
-          bg="bg-marine-blue"
-          color="text-white"
-          disabled={currentStep === (steps.length - 1)}
-          onClick={handleClick}
-        >
-          next step
-        </Button>
-      </footer>
-    </form>
+    <div className="flex-1">
+      <form className="flex flex-col flex-1 max-w-2xl h-full mx-auto pb-5 pt-10">
+        <section className="flex-1 space-y-10">
+          <FormHeader step={step} />
+          <step.Component step={step} />
+        </section>
+        <footer className="flex justify-between">
+          <Button
+            type="button"
+            action="prev"
+            bg="bg-transparent"
+            color="text-cool-gray"
+            disabled={currentStep === 0}
+            onClick={handleClick}
+          >
+            go back
+          </Button>
+          <Button
+            type="button"
+            action="next"
+            bg="bg-marine-blue"
+            color="text-white"
+            disabled={currentStep === (steps.length - 1)}
+            onClick={handleClick}
+          >
+            next step
+          </Button>
+        </footer>
+      </form>
+    </div>
   )
 }
