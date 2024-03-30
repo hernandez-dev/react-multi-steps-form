@@ -10,6 +10,9 @@ const reducer = (draft, action) => {
     case "select-plan":
       draft.steps[action.step].modalities = draft.steps[action.step].modalities.map(prev => ({ ...prev, selected: prev.id == action.id }))
       break
+    case "select-monthly-plan":
+      draft.steps[action.step].monthly = action.value
+      break
   } // switch end
 }
 
