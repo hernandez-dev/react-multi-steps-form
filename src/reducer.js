@@ -4,9 +4,9 @@ const reducer = (draft, action) => {
     case "set-current-step":
       draft.currentStep = action.value
       break
-    /*case "set-form-control":
+    case "set-form-control":
       draft.steps[action.step].fields[action.index].value = action.value
-      break*/
+      break
   } // switch end
 }
 
