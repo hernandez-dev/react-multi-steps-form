@@ -32,7 +32,11 @@ export default function PlanSelector({ step, dispatch }) {
         <span className="block leading-none">
           monthly
         </span>
-        <button type="button" className={`flex ${step.monthly ? '' : 'justify-end'} w-12 p-1 bg-sky-500 rounded-full`}>
+        <button
+          type="button"
+          className={`flex ${step.monthly ? '' : 'justify-end'} w-12 p-1 bg-sky-500 rounded-full`}
+          onClick={() => dispatch({ type: "select-monthly-plan", step: 1, value: !step.monthly })}
+        >
           <span className="block w-4 h-4 rounded-full bg-white"></span>
         </button>
         <span className="block leading-none">
