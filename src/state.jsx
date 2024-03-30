@@ -2,6 +2,7 @@
 import PersonalInformation from "./components/steps-form/components/PersonalInformation.jsx"
 import PlanSelector from "./components/steps-form/components/PlanSelector.jsx"
 import AddonsSelector from "./components/steps-form/components/AddonsSelector.jsx"
+import Summary from "./components/steps-form/components/Summary.jsx"
 
 export const state = {
   steps: [
@@ -102,6 +103,8 @@ export const state = {
       heading: "finishing up",
       subHeading: "summary",
       description: "Add-ons help to enhance your gaming experience",
+      summary: {},
+      Component: Summary
     }
   ],
   currentStep: 0
