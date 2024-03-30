@@ -13,6 +13,9 @@ const reducer = (draft, action) => {
     case "select-monthly-plan":
       draft.steps[action.step].monthly = action.value
       break
+    case "select-addon":
+      draft.steps[action.step].addons[action.index].selected = action.value
+      break
   } // switch end
 }
 
