@@ -7,6 +7,9 @@ const reducer = (draft, action) => {
     case "set-form-control":
       draft.steps[action.step].fields[action.index].value = action.value
       break
+    case "select-plan":
+      draft.steps[action.step].modalities = draft.steps[action.step].modalities.map(prev => ({ ...prev, selected: prev.id == action.id }))
+      break
   } // switch end
 }
 
