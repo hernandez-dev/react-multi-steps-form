@@ -4,7 +4,12 @@ export default function PlanSelector({ step, dispatch }) {
       <div className="grid grid-cols-3 gap-5">
         {step.modalities.map(modality => {
           return(
-            <button key={modality.id} type="button" className={`flex flex-col justify-between h-[250px] p-4 border ${modality.selected ? 'bg-sky-100/30 border-sky-500' : 'border-gray-300'} rounded-lg text-left`}>
+            <button
+              key={modality.id}
+              type="button"
+              className={`flex flex-col justify-between h-[250px] p-4 border ${modality.selected ? 'bg-sky-100/30 border-sky-500' : 'border-gray-300'} rounded-lg text-left transition duration-300`}
+              onClick={() => dispatch({ type: "select-plan", step: 1, id: modality.id })}
+            >
               <span className="block w-12">
                 <img src={`/images/${modality.icon}`} alt={`${modality.name} icon`} className="block w-full" />
               </span>
