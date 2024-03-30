@@ -1,7 +1,7 @@
 export default function FormControl({ field, index, dispatch }) {
   return(
     <div className="space-y-3 mt-5 first:mt-0">
-      <label htmlFor={field.id} className="block w-full text-marine-blue leading-none">
+      <label htmlFor={field.id} className="block w-full font-semibold text-marine-blue capitalize leading-none">
         {field.label}
       </label>
       <div className="border border-light-gray rounded-lg overflow-hidden">
