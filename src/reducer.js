@@ -1,11 +1,12 @@
 const reducer = (draft, action) => {
+  // console.log(action)
   switch(action.type) {
-    case "set-name":
+    case "set-current-step":
+      draft.currentStep = action.value
       break
-    case "set-email":
-      break
-    case "set-phone-number":
-      break
+    /*case "set-form-control":
+      draft.steps[action.step].fields[action.index].value = action.value
+      break*/
   } // switch end
 }
 
