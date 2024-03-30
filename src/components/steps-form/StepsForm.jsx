@@ -14,6 +14,16 @@ export default function StepsForm() {
   // current step
   const step = steps[currentStep]
 
+  // handleClick
+  function handleClick(e) {
+    const action = e.target.getAttribute("data-action").toLowerCase()
+    if (action === "next") {
+      console.log("next step")
+    } else {
+      console.log("prev step")
+    }
+  }
+
   return(
     <form className="flex flex-col flex-1 space-y-1">
       <section className="flex-1">
@@ -27,7 +37,7 @@ export default function StepsForm() {
           bg="bg-transparent"
           color="text-cool-gray"
           disabled={currentStep === 0}
-          onClick={() => console.log("click")}
+          onClick={handleClick}
         >
           go back
         </Button>
@@ -37,7 +47,7 @@ export default function StepsForm() {
           bg="bg-marine-blue"
           color="text-white"
           disabled={currentStep === (steps.length - 1)}
-          onClick={() => console.log("click")}
+          onClick={handleClick}
         >
           next step
         </Button>
