@@ -18,11 +18,13 @@ export default function PlanSelector({ step, dispatch }) {
                   {modality.name}
                 </h4>
                 <p className="text-cool-gray leading-none">
-                  ${modality.price}/{step.monthly ? 'mo' : 'yr'}
+                  ${modality.price * (step.monthly ? 1 : 10)}/{step.monthly ? 'mo' : 'yr'}
                 </p>
-                <span className="block text-marine-blue leading-none">
-                  2 months free
-                </span>
+                {step.monthly ? "" : (
+                  <span className="block text-marine-blue leading-none">
+                    2 months free
+                  </span>
+                )}
               </div>
             </button>
           )
