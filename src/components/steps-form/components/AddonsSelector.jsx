@@ -1,5 +1,6 @@
 export default function AddonsSelector({
   step,
+  monthly,
   dispatch
 }) {
   /*
@@ -34,7 +35,7 @@ export default function AddonsSelector({
               </p>
             </div>
             <span className="">
-              +${addon.price}/mo
+              +${addon.price * (monthly ? 1 : 10)}/{monthly ? "mo" : "yr"}
             </span>
           </button>
         )
