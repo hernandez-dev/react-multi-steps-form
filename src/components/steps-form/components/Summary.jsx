@@ -1,4 +1,4 @@
-export default function Summary({ step }) {
+export default function Summary({ step, dispatch }) {
   return(
     <div className="">
       <div className="p-5 bg-pastel-blue/10 rounded-xl">
@@ -7,7 +7,11 @@ export default function Summary({ step }) {
             <h3 className="font-bold text-lg text-marine-blue leading-none">
               Arcade ({step.summary.plan.monthly ? "Monthly" : "Yearly"})
             </h3>
-            <button type="button" className="underline">
+            <button
+              type="button"
+              className="underline"
+              onClick={() => dispatch({ type: "set-current-step", value: 1 })}
+            >
               Change
             </button>
           </div>
