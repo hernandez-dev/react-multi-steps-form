@@ -85,14 +85,14 @@ export const state = {
           id: 2,
           name: "larger storage",
           description: "Extra 1TB of cloud save",
-          price: 1,
+          price: 2,
           selected: true
         },
         {
           id: 3,
           name: "costomizable profile",
           description: "Custom theme on your profile",
-          price: 1,
+          price: 2,
           selected: false
         }
       ],
