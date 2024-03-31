@@ -29,13 +29,13 @@ export default function StepsForm() {
   }
 
   return(
-    <div className="flex-1">
-      <form className="flex flex-col flex-1 max-w-2xl h-full mx-auto pb-5 pt-10">
-        <section className="flex-1 space-y-10">
+    <div className="desktop:flex-1">
+      <form className="flex flex-col flex-1 h-full desktop:max-w-2xl desktop:mx-auto">
+        <section className="relative space-y-10 p-5 m-4 -mt-[105px] bg-white rounded-lg shadow-lg desktop:flex-1 desktop:mx-0 desktop:-mt-0 desktop:shadow-none">
           <FormHeader step={step} />
           <step.Component step={step} dispatch={appDispatch} />
         </section>
-        <footer className="flex justify-between">
+        <footer className="flex justify-between bg-white p-4 rounded-lg desktop:bg-transparent desktop:p-0">
           <Button
             type="button"
             action="prev"
