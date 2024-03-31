@@ -7,7 +7,7 @@ export default function PlanSelector({ step, dispatch }) {
             <button
               key={modality.id}
               type="button"
-              className={`outline-none flex flex-col justify-between h-[250px] p-4 border ${modality.selected ? 'bg-purplish-blue/5 border-purplish-blue' : 'border-gray-300'} rounded-lg text-left transition duration-300`}
+              className={`outline-none flex flex-col justify-between h-[250px] p-4 border ${modality.selected ? 'bg-alabaster border-purplish-blue' : 'border-gray-300'} rounded-lg text-left transition duration-300`}
               onClick={() => dispatch({ type: "select-plan", step: 1, id: modality.id })}
             >
               <span className="block w-12">
@@ -30,7 +30,7 @@ export default function PlanSelector({ step, dispatch }) {
           )
         })}
       </div>
-      <div className="flex items-center justify-center h-12 bg-purplish-blue/5 rounded-lg space-x-6 font-bold capitalize tracking-wide">
+      <div className="flex items-center justify-center h-12 bg-alabaster rounded-lg space-x-6 font-bold capitalize tracking-wide">
         <span className="block text-marine-blue leading-none">
           monthly
         </span>
