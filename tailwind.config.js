@@ -18,6 +18,9 @@ export default {
         "light-gray": "hsl(229, 24%, 87%)",
         "mongolia": "hsl(217, 100%, 97%)",
         "alabaster": "hsl(231, 100%, 99%)"
+      },
+      screens: {
+        desktop: "1100px"
       }
     },
   },
