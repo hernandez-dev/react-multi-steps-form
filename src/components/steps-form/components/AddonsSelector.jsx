@@ -14,7 +14,7 @@ export default function AddonsSelector({
           <button
             key={addon.id}
             type="button"
-            className={`flex items-center w-full p-5 border ${addon.selected ? 'bg-purplish-blue/5 border-purplish-blue' : 'border-gray-300'} rounded-lg transition duration-300`}
+            className={`flex items-center w-full p-5 border ${addon.selected ? 'bg-alabaster border-purplish-blue' : 'border-gray-300'} rounded-lg transition duration-300`}
             onClick={() => dispatch({
               type: "select-addon",
               step: 2,
