@@ -1,7 +1,7 @@
 export default function Summary({ step, dispatch }) {
   return(
     <div className="">
-      <div className="p-5 bg-pastel-blue/10 rounded-xl">
+      <div className="p-5 bg-alabaster rounded-xl">
         <div className="flex items-center text-cool-gray">
           <div className="flex-1 space-y-2">
             <h3 className="font-bold text-lg text-marine-blue leading-none">
@@ -19,7 +19,7 @@ export default function Summary({ step, dispatch }) {
             ${step.summary.plan.price}/{step.summary.label}
           </span>
         </div>
-        <div className="pt-5 mt-6 space-y-2 border-t border-pastel-blue/30">
+        <div className="pt-5 mt-6 space-y-2 border-t border-light-gray">
           {step.summary.addons.map(addon => {
             return(
               <div key={addon.id} className="flex items-center text-cool-gray">
