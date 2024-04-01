@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useState, useEffect, useContext } from "react"
 
 // context
 import StateContext from "../../context/StateContext.js"
@@ -9,6 +9,9 @@ import FormHeader from "./components/FormHeader.jsx"
 import Button from "./components/Button.jsx"
 
 export default function StepsForm() {
+  // local state
+  const [submit, setSubmit] = useState(false)
+
   // app state
   const { steps, currentStep } = useContext(StateContext)
 
@@ -31,6 +34,13 @@ export default function StepsForm() {
     }
   }
 
+  // step id changes
+  useEffect(() => {
+    const delay = summary ? 500 : 50
+    const timeout = setTimeout(() => setSubmit(summary), delay)
+    return () => clearTimeout(timeout)
+  }, [step.id])
+
   return(
     <div className="desktop:flex-1">
       <form className="flex flex-col min-h-[485px] flex-1 desktop:max-w-2xl desktop:h-full desktop:mx-auto desktop:min-h-full">
@@ -52,11 +62,11 @@ export default function StepsForm() {
             {currentStep === 0 ? "" : "go back"}
           </Button>
           <Button
-            type="button"
+            type={submit ? "submit" : "button"}
             action="next"
             bg={summary ? "bg-purplish-blue" : "bg-marine-blue"}
             color="text-white"
-            disabled={summary}
+            disabled={summary && !submit}
             hover="hover:bg-purplish-blue"
             focus="hover:bg-purplish-blue"
             onClick={summary ? () => null : handleClick}
