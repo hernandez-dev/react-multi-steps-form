@@ -42,6 +42,8 @@ export default function StepsForm() {
             bg="bg-transparent"
             color="text-cool-gray"
             disabled={currentStep === 0}
+            hover=""
+            focus=""
             onClick={handleClick}
           >
             go back
@@ -52,6 +54,8 @@ export default function StepsForm() {
             bg="bg-marine-blue"
             color="text-white"
             disabled={currentStep === (steps.length - 1)}
+            hover="hover:bg-purplish-blue"
+            focus="hover:bg-purplish-blue"
             onClick={handleClick}
           >
             next step
