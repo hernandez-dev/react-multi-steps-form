@@ -15,6 +15,9 @@ export default function StepsForm() {
   // current step
   const step = steps[currentStep]
 
+  // summary
+  const summary = currentStep === steps.length - 1
+
   // app dispatch
   const appDispatch = useContext(DispatchContext)
 
@@ -46,19 +49,19 @@ export default function StepsForm() {
             focus=""
             onClick={handleClick}
           >
-            go back
+            {currentStep === 0 ? "" : "go back"}
           </Button>
           <Button
             type="button"
             action="next"
-            bg="bg-marine-blue"
+            bg={summary ? "bg-purplish-blue" : "bg-marine-blue"}
             color="text-white"
-            disabled={currentStep === (steps.length - 1)}
+            disabled={summary}
             hover="hover:bg-purplish-blue"
             focus="hover:bg-purplish-blue"
-            onClick={handleClick}
+            onClick={summary ? () => null : handleClick}
           >
-            next step
+            {summary ? "comfirm" : "next step"}
           </Button>
         </footer>
       </form>
