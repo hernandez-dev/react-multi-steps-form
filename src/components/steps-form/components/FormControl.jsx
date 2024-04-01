@@ -1,9 +1,20 @@
-export default function FormControl({ field, index, dispatch }) {
+export default function FormControl({
+  field,
+  index,
+  invalid,
+  hint,
+  dispatch
+}) {
   return(
     <div className="space-y-3 mt-5 first:mt-0">
-      <label htmlFor={field.id} className="block w-full font-semibold text-marine-blue capitalize leading-none">
-        {field.label}
-      </label>
+      <div className="flex items-center">
+        <label htmlFor={field.id} className="block flex-1 font-semibold text-marine-blue capitalize leading-none">
+          {field.label}
+        </label>
+        <span className={`${invalid ? "block" : "hidden"} font-semibold text-strawberry-red leading-none`}>
+          {hint}
+        </span>
+      </div>
       <div className="overflow-hidden">
         <input
           id={field.id}
