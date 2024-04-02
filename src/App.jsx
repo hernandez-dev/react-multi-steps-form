@@ -21,7 +21,7 @@ function App() {
   return (
     <StateContext.Provider value={state}>
       <DispatchContext.Provider value={dispatch}>
-        <main className="m-auto w-full max-w-md desktop:flex desktop:max-w-6xl desktop:p-4 desktop:bg-white desktop:rounded-xl desktop:shadow-lg">
+        <main className="m-auto w-full max-w-md desktop:flex desktop:max-w-[940px] desktop:p-4 desktop:bg-white desktop:rounded-xl desktop:shadow-lg">
           <Sidebar steps={state.steps} />
           <StepsForm steps={state.steps} />
         </main>
