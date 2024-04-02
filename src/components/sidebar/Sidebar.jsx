@@ -13,7 +13,7 @@ export default function Sidebar() {
         <source media="(min-width:1100px)" srcSet="/images/bg-sidebar-desktop.svg" />
         <img src="/images/bg-sidebar-mobile.svg" alt="sidebar background" className="block w-full" />
       </picture>
-      <div className="absolute top-0 left-0 z-10 flex items-start justify-center gap-5 w-full h-full p-7 desktop:block desktop:space-y-7">
+      <div className="absolute top-0 left-0 z-10 flex items-start justify-center gap-5 w-full h-full p-[2rem] desktop:block desktop:space-y-[2rem]">
         {steps.map((step, index) => {
           const active = index === currentStep
           return(
