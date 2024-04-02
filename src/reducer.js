@@ -4,9 +4,9 @@ const reducer = (draft, action) => {
     case "set-current-step":
       draft.currentStep = action.value
       break
-    /*case "set-summary":
+    case "set-summary":
       draft.steps[draft.steps.length - 1].summary = action.value
-      break*/
+      break
     case "set-form-control":
       // draft.steps[action.step].fields[action.index].invalid = false
       draft.steps[action.step].fields[action.index].value = action.value
