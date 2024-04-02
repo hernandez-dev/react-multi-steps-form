@@ -24,6 +24,25 @@ const reducer = (draft, action) => {
       draft.steps[0].fields = action.fields
       draft.currentStep = action.step
       break
+    case "submit":
+      const information = draft.steps[0].fields
+      const plan = draft.steps[1]
+      const modality = plan.modalities.find(modality => modality.selected)
+      const addons = draft.steps[2].addons.filter(addon => addon.selected).map(addon => ({ id: addon.id, name: addon.name }))
+      draft.data = {
+        name: information.find(field => field.name == "name").value,
+        email: information.find(field => field.name == "email").value,
+        phoneNumber: information.find(field => field.name == "phone-number").value,
+        plan: {
+          id: modality.id,
+          name: modality.name,
+          monthly: plan.monthly
+        },
+        addons: addons
+      }
+      // console.log(draft.data)
+      draft.success = true
+      break
   } // switch end
 }
 
