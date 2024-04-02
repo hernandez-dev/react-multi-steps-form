@@ -53,7 +53,7 @@ export default function StepsForm() {
   }
 
   // currentStep changes
-  /*useEffect(() => {
+  useEffect(() => {
     const plan = steps[1]
     const selectedPlan = plan.modalities.find(plan => plan.selected)
     const multiplier = plan.monthly ? 1 : 10
@@ -64,7 +64,7 @@ export default function StepsForm() {
       label: plan.monthly ? "mo" : "yr"
     }
     appDispatch({ type: "set-summary", value: summary })
-  }, [currentStep])*/
+  }, [currentStep])
 
   return(
     <div className="desktop:flex-1">
