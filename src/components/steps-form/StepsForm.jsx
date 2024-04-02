@@ -4,6 +4,9 @@ import { useState, useEffect, useContext } from "react"
 import StateContext from "../../context/StateContext.js"
 import DispatchContext from "../../context/DispatchContext.js"
 
+// utils
+import { validate } from "./utils.js"
+
 // components
 import FormHeader from "./components/FormHeader.jsx"
 import Button from "./components/Button.jsx"
@@ -34,16 +37,38 @@ export default function StepsForm() {
     }
   }
 
-  // step id changes
-  useEffect(() => {
-    const delay = summary ? 500 : 50
-    const timeout = setTimeout(() => setSubmit(summary), delay)
-    return () => clearTimeout(timeout)
-  }, [step.id])
+  // handleSubmit
+  function handleSubmit(e) {
+    e.preventDefault()
+    if (currentStep === (steps.length - 1)) {
+      appDispatch({ type: "submit" })
+    } else {
+      const fields = validate(steps[0].fields)
+      appDispatch({
+        type: "validate-personal-information",
+        fields: fields,
+        step: fields.filter(field => field.invalid).length ? 0 : currentStep + 1
+      }) // appDispatch end
+    }
+  }
+
+  // currentStep changes
+  /*useEffect(() => {
+    const plan = steps[1]
+    const selectedPlan = plan.modalities.find(plan => plan.selected)
+    const multiplier = plan.monthly ? 1 : 10
+    const addons = steps[2].addons.filter(addon => addon.selected).map(addon => ({ ...addon, price: addon.price * multiplier }))
+    const summary = {
+      plan: { ...selectedPlan, price: (selectedPlan.price * multiplier) },
+      addons: addons,
+      label: plan.monthly ? "mo" : "yr"
+    }
+    appDispatch({ type: "set-summary", value: summary })
+  }, [currentStep])*/
 
   return(
     <div className="desktop:flex-1">
-      <form className="flex flex-col min-h-[485px] flex-1 desktop:max-w-2xl desktop:h-full desktop:mx-auto desktop:min-h-full">
+      <form onSubmit={handleSubmit} className="flex flex-col min-h-[485px] flex-1 desktop:max-w-2xl desktop:h-full desktop:mx-auto desktop:min-h-full">
         <section className="relative space-y-10 p-5 m-4 -mt-[105px] bg-white rounded-lg shadow-lg desktop:mx-0 desktop:-mt-0 desktop:shadow-none">
           <FormHeader step={step} />
           <step.Component step={step} dispatch={appDispatch} monthly={steps[1].monthly} />
@@ -62,14 +87,14 @@ export default function StepsForm() {
             {currentStep === 0 ? "" : "go back"}
           </Button>
           <Button
-            type={submit ? "submit" : "button"}
+            type="submit"
             action="next"
             bg={summary ? "bg-purplish-blue" : "bg-marine-blue"}
             color="text-white"
-            disabled={summary && !submit}
+            disabled={false}
             hover="hover:bg-purplish-blue"
             focus="hover:bg-purplish-blue"
-            onClick={summary ? () => null : handleClick}
+            onClick={() => null}
           >
             {summary ? "comfirm" : "next step"}
           </Button>
