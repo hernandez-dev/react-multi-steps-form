@@ -8,7 +8,7 @@ const reducer = (draft, action) => {
       draft.steps[draft.steps.length - 1].summary = action.value
       break
     case "set-form-control":
-      // draft.steps[action.step].fields[action.index].invalid = false
+      draft.steps[action.step].fields[action.index].invalid = false
       draft.steps[action.step].fields[action.index].value = action.value
       break
     case "select-plan":
