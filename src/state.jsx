@@ -18,21 +18,24 @@ export const state = {
           label: "name",
           name: "name",
           action: "set-name",
-          value: ""
+          value: "",
+          expression: /[^a-z\s?]/gi
         },
         {
           id: "email",
           type: "text",
           label: "email",
           name: "email",
-          value: ""
+          value: "",
+          expression: /\s/gi
         },
         {
           id: "phone-number",
           type: "text",
           label: "phone number",
           name: "phone-number",
-          value: ""
+          value: "",
+          expression: /[^0-9+?]/gi
         }
       ],
       Component: PersonalInformation
