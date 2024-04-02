@@ -1,6 +1,6 @@
 export default function FormHeader({ step }) {
   return(
-    <header className="pb-10 space-y-4">
+    <header className="space-y-[22px] desktop:py-[47px]">
       <h1 className="font-bold text-3xl text-marine-blue leading-none">
         {step.heading.charAt(0).toUpperCase() + step.heading.slice(1)}
       </h1>
