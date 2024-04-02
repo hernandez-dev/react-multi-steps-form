@@ -17,11 +17,11 @@ export default function Sidebar() {
         {steps.map((step, index) => {
           const active = index === currentStep
           return(
-            <div key={step.id} className="flex items-center">
-              <span className={`flex items-center justify-center w-9 h-9 border ${active ? "bg-pastel-blue border-patel-blue text-marine-blue" : "border-white text-white"} font-bold rounded-full`}>
+            <div key={step.id} className="flex">
+              <span className={`flex items-center justify-center w-[33px] h-[33px] border ${active ? "bg-pastel-blue border-patel-blue text-marine-blue" : "border-white text-white"} font-bold rounded-full`}>
                 {index + 1}
               </span>
-              <div className="hidden flex-1 pl-5 text-white uppercase tracking-widest desktop:block">
+              <div className="hidden flex-1 pl-5 text-white uppercase tracking-widest desktop:flex desktop:flex-col desktop:justify-between">
                 <h3 className="text-xs leading-none">
                   step {index + 1}
                 </h3>
