@@ -17,7 +17,7 @@ export default function StepsForm() {
   const [submit, setSubmit] = useState(false)
 
   // app state
-  const { steps, currentStep } = useContext(StateContext)
+  const { steps, currentStep, success } = useContext(StateContext)
 
   // current step
   const step = steps[currentStep]
@@ -70,12 +70,12 @@ export default function StepsForm() {
   return(
     <div className="desktop:flex-1">
       <form onSubmit={handleSubmit} className="flex flex-col min-h-[485px] flex-1 desktop:max-w-2xl desktop:h-full desktop:mx-auto desktop:min-h-full">
-        <section className="bg-red-200 relative p-5 m-4 -mt-[105px] bg-white rounded-lg shadow-lg overflow-hidden desktop:flex-1 desktop:mx-0 desktop:-mt-0 desktop:shadow-none">
+        <section className="relative p-5 m-4 -mt-[105px] bg-white rounded-lg shadow-lg overflow-hidden desktop:flex-1 desktop:mx-0 desktop:-mt-0 desktop:shadow-none">
           <FormHeader step={step} />
           <step.Component step={step} dispatch={appDispatch} monthly={steps[1].monthly} />
-          <Confirmation />
+          {success ? <Confirmation /> : ''}
         </section>
-        <footer className="flex justify-between mt-auto bg-white p-4 rounded-lg desktop:bg-transparent desktop:p-0 desktop:mt-none">
+        <footer className={`${success ? "invisible desktop:hidden" : "flex justify-between"} mt-auto bg-white p-4 rounded-lg desktop:bg-transparent desktop:p-0 desktop:mt-none`}>
           <Button
             type="button"
             action="prev"
