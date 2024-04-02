@@ -110,7 +110,8 @@ export const state = {
       Component: Summary
     }
   ],
-  currentStep: 0
+  currentStep: 0,
+  success: false
 }
 
 // export default state
