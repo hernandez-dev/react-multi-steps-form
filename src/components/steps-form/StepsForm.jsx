@@ -79,7 +79,7 @@ export default function StepsForm() {
           <Button
             type="button"
             action="prev"
-            w="auto"
+            w="w-[124px] desktop:w-auto"
             bg="bg-transparent"
             color="text-cool-gray"
             disabled={currentStep === 0}
