@@ -1,6 +1,7 @@
 export default function Button({
   type,
   action,
+  w,
   bg,
   color,
   disabled,
@@ -13,7 +14,7 @@ export default function Button({
     <button
       type={type}
       data-action={action}
-      className={`outline-none block w-32 ${bg} rounded-lg font-semibold text-lg ${color} capitalize leading-[3rem] transition duration-100 ${hover} ${focus}`}
+      className={`outline-none flex items-center justify-center ${w} h-12 ${bg} rounded-lg font-semibold text-lg ${color} capitalize transition duration-100 ${hover} ${focus}`}
       disabled={disabled}
       onClick={onClick}
     >
