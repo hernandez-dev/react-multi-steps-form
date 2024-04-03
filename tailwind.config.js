@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        ubuntu: '"Ubuntu", sans-serif'
+      },
       colors: {
         // primary
         "marine-blue": "hsl(213, 96%, 18%)",
