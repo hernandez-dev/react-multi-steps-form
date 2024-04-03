@@ -6,7 +6,7 @@ export default function FormControl({
   dispatch
 }) {
   return(
-    <div className="space-y-3 mt-5 first:mt-0">
+    <div className="space-y-[11px]">
       <div className="flex items-center">
         <label htmlFor={field.id} className="block flex-1 font-semibold text-marine-blue capitalize leading-none">
           {field.label}
