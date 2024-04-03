@@ -70,7 +70,7 @@ export default function StepsForm() {
   return(
     <div className="desktop:flex-1">
       <form onSubmit={handleSubmit} className="flex flex-col min-h-[485px] flex-1 desktop:max-w-[448px] desktop:h-full desktop:mx-auto desktop:min-h-full">
-        <section className="relative m-4 -mt-[105px] bg-white rounded-lg shadow-lg overflow-hidden desktop:flex-1 desktop:mx-0 desktop:-mt-0 desktop:shadow-none">
+        <section className="relative p-5 m-4 -mt-[105px] bg-white rounded-lg shadow-lg overflow-hidden desktop:flex-1 desktop:p-0 desktop:mx-0 desktop:-mt-0 desktop:shadow-none">
           <FormHeader step={step} />
           <step.Component step={step} dispatch={appDispatch} monthly={steps[1].monthly} />
           {success ? <Confirmation /> : ''}
@@ -79,6 +79,7 @@ export default function StepsForm() {
           <Button
             type="button"
             action="prev"
+            w="auto"
             bg="bg-transparent"
             color="text-cool-gray"
             disabled={currentStep === 0}
@@ -91,6 +92,7 @@ export default function StepsForm() {
           <Button
             type="submit"
             action="next"
+            w="w-[124px]"
             bg={summary ? "bg-purplish-blue" : "bg-marine-blue"}
             color="text-white"
             disabled={false}
