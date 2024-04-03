@@ -15,7 +15,7 @@ export default function AddonsSelector({
           <button
             key={addon.id}
             type="button"
-            className={`flex items-center w-full p-5 border ${addon.selected ? 'bg-alabaster border-purplish-blue' : 'border-gray-300'} rounded-lg transition duration-300`}
+            className={`flex items-center w-full p-6 border ${addon.selected ? 'bg-alabaster border-purplish-blue' : 'border-gray-300'} rounded-xl transition duration-300`}
             onClick={() => dispatch({
               type: "select-addon",
               step: 2,
@@ -23,10 +23,10 @@ export default function AddonsSelector({
               value: !addon.selected
             })}
           >
-            <span className={`flex items-center justify-center w-6 h-6 p-1 border rounded ${addon.selected ? 'bg-purplish-blue border-purplish-blue' : 'border-gray-300'} transition duration-300`}>
+            <span className={`flex items-center justify-center w-5 h-5 p-1 border rounded ${addon.selected ? 'bg-purplish-blue border-purplish-blue' : 'border-gray-300'} transition duration-300`}>
               <img src={`/images/icon-checkmark.svg`} alt="icon checkmark" className="block w-full" />
             </span>
-            <div className="flex-1 pl-5 space-y-2 text-left">
+            <div className="flex-1 pl-5 space-y-3 text-left">
               <h4 className="font-semibold text-lg text-marine-blue capitalize leading-none">
                 {addon.name}
               </h4>
