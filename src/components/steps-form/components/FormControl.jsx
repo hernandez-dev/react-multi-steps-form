@@ -28,6 +28,7 @@ export default function FormControl({
             index: index,
             value: e.target.value
           })}
+          placeholder={field.placeholder}
         />
       </div>
     </div>
