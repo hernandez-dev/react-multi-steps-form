@@ -21,7 +21,7 @@ export default function FormControl({
           type={field.type}
           name={field.name}
           value={field.value}
-          className={`outline-none block w-full px-4 background-transparent border ${invalid ? "border-strawberry-red" : "border-light-gray focus:border-marine-blue"} rounded-lg text-cool-gray leading-[48px] transition duration-300`}
+          className={`outline-none block w-full px-4 background-transparent border ${invalid ? "border-strawberry-red" : "border-light-gray focus:border-marine-blue"} rounded-lg text-cool-gray leading-[46px] transition duration-300`}
           onChange={e => dispatch({
             type: "set-form-control",
             step: 0,
