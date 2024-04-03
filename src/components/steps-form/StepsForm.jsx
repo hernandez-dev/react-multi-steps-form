@@ -75,7 +75,7 @@ export default function StepsForm() {
           <step.Component step={step} dispatch={appDispatch} monthly={steps[1].monthly} />
           {success ? <Confirmation /> : ''}
         </section>
-        <footer className={`${success ? "invisible desktop:hidden" : "flex justify-between"} mt-auto bg-white p-4 rounded-lg desktop:bg-transparent desktop:p-0 desktop:mt-none`}>
+        <footer className={`${success ? "invisible desktop:hidden" : "flex justify-between"} mt-auto bg-white p-4 rounded-lg desktop:bg-transparent desktop:p-0 desktop:pb-4 desktop:mt-none`}>
           <Button
             type="button"
             action="prev"
