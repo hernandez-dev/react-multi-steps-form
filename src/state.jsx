@@ -19,6 +19,7 @@ export const state = {
           name: "name",
           action: "set-name",
           value: "",
+          placeholder: "eg: Stephen King",
           expression: /[^a-z\s?]/gi
         },
         {
@@ -27,6 +28,7 @@ export const state = {
           label: "email",
           name: "email",
           value: "",
+          placeholder: "eg: stephenkign@demo.com",
           expression: /\s/gi
         },
         {
@@ -35,6 +37,7 @@ export const state = {
           label: "phone number",
           name: "phone-number",
           value: "",
+          placeholder: "eg: +1 234 567 8900",
           expression: /[^0-9+?]/gi
         }
       ],
